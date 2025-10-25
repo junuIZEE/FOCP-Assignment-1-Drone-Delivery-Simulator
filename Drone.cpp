@@ -1,4 +1,4 @@
-// Working code for the Drone simulator, v2.0
+// Working code for the Drone simulator, v3.0
 
 // Headers
 #include <iostream>
@@ -12,12 +12,18 @@ using namespace std;
 // Definitions
 #define DOTS 30 // How many times to print ...'s
 #define WAIT 1200 // Wait between deliveries
+#define RAINY 3
+#define WINDY 2
+#define SUNNY 1
 #define START "Press ENTER to start deliveries\n"
+#define TOWARDS "Headed towards: "
+#define ANOTHERTOWARDS "Headed towards another area within: "
 #define FIVESTAR 80
 #define FOURSTAR 60
 #define THREESTAR 40
 #define TWOSTAR 20
 
+const string Locations[5] = { "NUST H-12", "F-8", "F-6", "G-11", "H-13" };
 
 // Prototype
 int random(int range, int base);			// Returns a random int from 1 to (inclusive) range, with base added on top.
@@ -37,14 +43,15 @@ int main()
 	{
 		cout << START;
 		cin.get();
-		srand(time(0));
+		srand(time(0));// it was here earlier srad
 	}
 
 	// Start
 	int successfulDeliveries = 0;
+	string lastLocation = "";
+
 	for (int a = 1; a <= 3; a++)
 	{
-		cout << "Delivery #" << a << ": \n";
 
 		// Gets random conditions
 		int R_weather = random(3, 1);		// 1 = Sunny, 2 = Windy, 3 = Rainy
@@ -52,17 +59,27 @@ int main()
 		int R_batteryUsage = random(16, 10);
 		int R_Malfunction = random(10, 0);
 		int R_Wait = random(100, 10);
+		string location = Locations[random(5, 0)];
 
-		loading(DOTS, R_Wait); // For UI
+		cout << "Delivery #" << a << ", ";
+		if (R_weather != RAINY) {
+			if (lastLocation == location)
+				cout << ANOTHERTOWARDS << location << endl;
+			else
+				cout << TOWARDS << location << endl;
 
-		cout << endl;
+			loading(DOTS, R_Wait); // For UI
+			cout << endl;
+		}
+
+
 
 		// What to do under certain conditions
-		if (R_weather == 3)
+		if (R_weather == RAINY)
 		{
 			cout << "FLIGHT DELAYED because of rain\n";
 		}
-		else if (R_weather == 2 && BATTERY < 40)
+		else if (R_weather == WINDY && BATTERY < 40)
 		{
 			cout << "Battery Remaining: " << BATTERY << "%" << endl;
 			cout << "Returning to base for a quick recharge!\n";
@@ -94,6 +111,7 @@ int main()
 		Sleep(WAIT);
 
 		cout << endl;
+		lastLocation = location;
 	}
 
 	int SCORE = BATTERY / 2 + successfulDeliveries * 20;
