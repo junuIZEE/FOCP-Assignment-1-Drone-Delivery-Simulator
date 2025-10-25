@@ -1,51 +1,76 @@
 # FOCP-Assignment-1-Drone-Delivery-Simulator
-Delivery Drone Simulator
+# FOCP-Assignment-1-Drone-Delivery-Simulator
+**Delivery Drone Simulator**
 
-1.	Title and Team Information
+**1.	Title and Team Information**
 
    
-Project Title: Delivery Drone Simulator 
+**Project Title:** Delivery Drone Simulator 
 
 
-Team Members & Roles:
+**Team Members & Roles:**
 
+ - ***Umayrah Masood Malik:*** Making a logical flowchart on which the code works and making a comprehensive readme.md on the GitHub        
+   repository.
 
-Umayrah Masood Malik: Making a logical flowchart on which the code works and making a comprehensive readme.md on the GitHub repository.
+     
 
-Bilal Ghazi:  Implementing the logic of the flowchart and writing non-modularized version of the code which would later be modified further. Will also be making the word document for the group assignment.
+ - ***Bilal Ghazi:***  Implementing the logic of the flowchart and writing non-modularized version of the code which would later be     
+   modified further. Will also be making the word document for the group
+   assignment.
 
-Jyotish Kumar: Modularizing the code and adding arrays for better execution of the program, as well as using good programming practices and adding comments for better understanding.
+    
 
+ - ***Jyotish Kumar:*** Modularizing the code and adding arrays for better execution of the program, as well as using good      
+   programming    practices and adding comments for better      
+   understanding.
 
-2.	Overview
+**2.	Overview**
 
    
 This program simulates a drone delivery system that performs multiple delivery runs while reacting dynamically to environmental conditions such as weather, obstacles, and battery usage. It models real world drone logistics challenges like:
-Delays due to rain;
-Route rerouting due to obstacles;
-Battery management and return-to-base logic;
-Randomized system malfunctions.
+
+ - Delays due to rain;
+ - Route rerouting due to obstacles;
+ - Battery management and return-to-base logic;
+ - Randomized system malfunctions.
+
 The simulator provides a visualized, step-by-step sequence of delivery outcomes and evaluates performance using a rating system based on successful, failed, and delayed deliveries.
 
 
-3.	Program Design / Logic
+**3.	Program Design / Logic**
 
 
  The functions Implemented are as follows:
  
-  random (int range, int base): Generates a random integer within the specified range.
-
-  loading(int repetitions, int wait): Creates a visual delay using dots to simulate real-time waiting.
-  
-  get_starCount(int score): Calculates a performance rating (1–5 stars) based on final score.
-  
-  display_performance(...): Displays delivery summary and performance metrics.
-  
-  show_battery(int battery): Shows current drone battery percentage.
-
   
 
-4.	Logic Flow
+ - random (int range, int base): Generates a random integer within the
+   specified range.
+
+ 
+
+ - loading(int repetitions, int wait): Creates a visual delay using dots
+   to simulate real-time waiting.
+
+  
+
+ - get_starCount(int score): Calculates a performance rating (1–5 stars)
+   based on final score.
+
+  
+  
+
+ - display_performance(...): Displays delivery summary and performance
+   metrics.
+
+  
+
+ - show_battery(int battery): Shows current drone battery percentage.
+
+  
+
+**4.	Logic Flow**
 
    
 The user will start the simulation by pressing Enter.
@@ -56,16 +81,29 @@ For each delivery: Random conditions will be generated, for example:
 
 •	Then drone either:
 
-Delivers successfully,
+ 
 
-Is delayed (rain),
+ - Delivers successfully,
 
-Reroutes (obstacle),
+   
+ 
 
-Fails due to malfunction,
+ - Is delayed (rain),
 
-Or returns to base if the battery is too low.
+   
+  
 
+ - Reroutes (obstacle),
+
+  
+
+ - Fails due to malfunction,
+
+   
+ 
+
+ - Or returns to base if the battery is too low.
+ 
 
 The system tracks:
 
@@ -81,19 +119,19 @@ Performance summary is displayed at the end.
    
 
 
-5.	Environmental Simulation
+**5.	Environmental Simulation**
    
 Weather conditions influence whether deliveries proceed or are delayed.
 Obstacles trigger rerouting logic and consume extra battery.
 Randomness (using rand()) ensures variability in each simulation run.
 
-6.	Execution Instructions
+**6.	Execution Instructions**
 
 Compilation
    
 Run
    
-Usage:
+**Usage:**
    
 Press ENTER to start.
 
@@ -139,42 +177,42 @@ Details:
 
 
 
-7. Team Collaboration Summary:
+**7. Team Collaboration Summary:**
    
 Each team member contributed to different aspects of the project as follows:
 
-Umayrah: Making flowchart and maintain readme.md.
+*Umayrah:* Making flowchart and maintain readme.md.
 
-Bilal: Writing version#1 of the code and making the document.
+*Bilal:* Writing version#1 of the code and making the document.
 
-Jyotish: Adding modules and arrays and finalizing code.
+*Jyotish:* Adding modules and arrays and finalizing code.
 
 
-8. Version Control
+**8. Version Control**
 
    
 All members committed to a shared GitHub repository using branch-based development.
 
 Each member made at least one commit showing active participation.
 
-9. AI Tool Reflection
+**9. AI Tool Reflection**
     
 Tools Used: ChatGPT (GPT-5)
 
-Usage Summary:
+**Usage Summary:**
 
 Improving code readability.
 
 Assisted in structuring the README.md file and refining project documentation.
 
-Learning Reflection:
+**Learning Reflection:**
 
 Using AI tools helped streamline the documentation process and encouraged more readable code.
 
 However, the main logic and implementation decisions were developed independently by the team.
 
 
-10. Future Improvements
+**10. Future Improvements**
 
     
   Drones could be made a class, with next location, battery, etc., as its properties.
