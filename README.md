@@ -17,7 +17,7 @@
 
  - ***Bilal Ghazi:***  Implementing the logic of the flowchart and writing non-modularized version of the code which would later be     
    modified further. Will also be making the word document for the group
-   assignment.
+   assignment. Will be testing the code aswell.
 
     
 
