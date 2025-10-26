@@ -17,18 +17,18 @@
 
  - ***Bilal Ghazi:***  Implementing the logic of the flowchart and writing non-modularized version of the code which would later be     
    modified further. Will also be making the word document for the group
-   assignment. Will be testing the code aswell.
+   assignment. Tested the code aswell.
 
     
 
- - ***Jyotish Kumar:*** Modularizing the code and adding arrays for better execution of the program, as well as using good      
-   programming    practices and adding comments for better      
-   understanding.
+ - ***Jyotish Kumar:*** Modularizing the code and optimizing for better execution of the program, as well as using good      
+   programming practices and adding comments for better understanding.
 
 **2.	Overview**
 
-   
-This program simulates a drone delivery system that performs multiple delivery runs while reacting dynamically to environmental conditions such as weather, obstacles, and battery usage. It models real world drone logistics challenges like:
+
+   This program simulates a drone delivery system that performs multiple delivery runs while reacting dynamically to environmental conditions such as weather, obstacles, and battery usage. It models real world drone logistics challenges like:
+
 
  - Delays due to rain;
  - Route rerouting due to obstacles;
@@ -45,28 +45,20 @@ The simulator provides a visualized, step-by-step sequence of delivery outcomes 
  
   
 
- - random (int range, int base): Generates a random integer within the
-   specified range.
-
+- display_performance(...): Displays delivery summary and performance metrics.
  
+- get_starCount(int score): Calculates a performance rating (1–5 stars) based on final score.
 
- - loading(int repetitions, int wait): Creates a visual delay using dots
-   to simulate real-time waiting.
+- loading(int repetitions, int wait): Creates a visual delay using dots to simulate real-time waiting.
 
-  
+- obstacleExists(): Randomly decides whether or not an obstacle is there (1 in 3 chance). Returns a bool.
 
- - get_starCount(int score): Calculates a performance rating (1–5 stars)
-   based on final score.
+- random (int range, int base): Generates a random integer within the specified range.
 
-  
-  
+- start_day(): Starts the deliveries.
 
- - display_performance(...): Displays delivery summary and performance
-   metrics.
+- show_battery(int battery): Shows current drone battery percentage.
 
-  
-
- - show_battery(int battery): Shows current drone battery percentage.
 
   
 
@@ -102,7 +94,7 @@ For each delivery: Random conditions will be generated, for example:
    
  
 
- - Or returns to base if the battery is too low.
+ - Or returns to base if the battery is too low (and windy).
  
 
 The system tracks:
@@ -185,7 +177,7 @@ Each team member contributed to different aspects of the project as follows:
 
 *Bilal:* Writing version#1 of the code and making the document.
 
-*Jyotish:* Adding modules and arrays and finalizing code.
+*Jyotish:* Modularizing the code and adding finishing touches.
 
 
 **8. Version Control**
@@ -214,8 +206,12 @@ However, the main logic and implementation decisions were developed independentl
 
 **10. Future Improvements**
 
-    
-  Drones could be made a class, with next location, battery, etc., as its properties.
-  
-  The drone can be made to work through the rain if the distance is short, however it will affect the battery strongly.
+- Drones could be made a class, with next location, battery, etc., as its properties. Further, they could be more interactive (user controlled).
+- The drone could be made to work through the rain if the distance is short, however it will affect the battery strongly. Or other similar situations where the drone can try to avoid the obstacle, crash into it and either break (unable to do any more deliveries until repaired) or push through it with a heavily drained battery.
+- More weather conditions could be introduced, like “Very Sunny” which increases battery drain (because of heat).
+- Windy could make the speed of the drone decrease (time taken to reach increases).
+- The code could be made more modular through functions like send_for_delivery(),  avoid_obstacle(), etc.
+
+
+
   
